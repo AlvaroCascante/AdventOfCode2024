@@ -2,7 +2,8 @@
 
 ## Overview
 
-This project contains solutions for the problems create them by the AdventOfCode 2024, it's implemented in Kotlin. 
+This project contains solutions for the problems create them by the 
+[AdventOfCode 2024](https://adventofcode.com/2024), it's implemented in Kotlin. 
 
 ## How to Run
 
