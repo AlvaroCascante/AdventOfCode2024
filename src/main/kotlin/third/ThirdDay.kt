@@ -1,6 +1,7 @@
 package third
 
 import Solution
+import utils.FileUtils
 
 /*
 * The goal of the program is just to multiply some numbers.
@@ -50,7 +51,7 @@ class ThirdDay: Solution {
 
     // Remove the don't() from the file until found a do()
     private fun removeDonts(): String {
-        val data = readFileAsString("/third_input.txt")
+        val data = FileUtils.readFileAsString("/third_input.txt")
         var dontIndex = -1
         var doIndex = -1
         var modifiedString = data
@@ -62,14 +63,5 @@ class ThirdDay: Solution {
             modifiedString = modifiedString.removeRange(dontIndex, doIndex)
         }
         return modifiedString
-    }
-
-    override fun readFile(fileName: String): List<String> {
-        return this::class.java.getResource(fileName)?.readText()?.lines() ?: emptyList()
-    }
-
-    // Read the file as one string, not by lines
-    private fun readFileAsString(fileName: String): String {
-        return this::class.java.getResource(fileName)?.readText() ?: ""
     }
 }

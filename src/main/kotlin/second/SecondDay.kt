@@ -1,6 +1,7 @@
 package second
 
 import Solution
+import utils.FileUtils
 
 /*
 * Report only counts as safe if both of the following are true:
@@ -16,7 +17,7 @@ import Solution
 class SecondDay: Solution {
 
     override fun solve(): Any {
-        val data = readFile("/second_input.txt")
+        val data = FileUtils.readFileAsList("/second_input.txt")
 
         var count = 0L
         data.forEach { item ->
@@ -102,9 +103,5 @@ class SecondDay: Solution {
         } else {
             (n2 -  n1) in 1..3
         }
-    }
-
-    override fun readFile(fileName: String): List<String> {
-        return this::class.java.getResource(fileName)?.readText()?.lines() ?: emptyList()
     }
 }

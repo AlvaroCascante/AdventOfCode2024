@@ -1,6 +1,7 @@
 package first
 
 import Solution
+import utils.FileUtils
 import kotlin.math.abs
 
 /*
@@ -23,7 +24,7 @@ import kotlin.math.abs
 class FirstDay: Solution {
 
     override fun solve(): Any {
-        val data = readFile("/first_input.txt")
+        val data = FileUtils.readFileAsList("/first_input.txt")
 
         val list1 = mutableListOf<Long>()
         val list2 = mutableListOf<Long>()
@@ -68,9 +69,5 @@ class FirstDay: Solution {
 
         println("Second Result: $result")
         return result + result2
-    }
-
-    override fun readFile(fileName: String): List<String> {
-        return this::class.java.getResource(fileName)?.readText()?.lines() ?: emptyList()
     }
 }
